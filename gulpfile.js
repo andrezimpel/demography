@@ -20,10 +20,12 @@ gulp.task('scripts', function() {
     .pipe(concat('demography.js'))
     // This will output the non-minified version
     .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('./'))
     // This will minify and rename to foo.min.js
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('./'));
 });
 
 // ------------------------------------------

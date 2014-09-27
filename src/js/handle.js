@@ -1,28 +1,33 @@
 $(document).ready(function(){
-  // (msie9, firefox, safari....)
-  var bodyClass;
 
-  if (bowser.safari === true) {
-    bodyClass = "safari";
-  } else if (bowser.msie === true) {
-    bodyClass = "msie";
-  } else if (bowser.firefox === true) {
-    bodyClass = "firefox";
-  } else if (bowser.chrome === true) {
-    bodyClass = "chrome";
-  } else if (bowser.opera === true) {
-    bodyClass = "opera";
-  } else if (bowser.iphone) {
-    bodyClass = "iphone";
-  } else if (bowser.android) {
-    bodyClass = "android";
-  } else if (bowser.ipad) {
-    bodyClass = "ipad";
-  }
+  window.bodyclasses;
 
-  if (bowser.mobile && !bowser.ipad) {
-    bodyClass = bodyClass + " mobile";
+  // check if bowser is included
+  if (typeof bowser == 'undefined') {
+    console.log("you need to include bowser https://github.com/ded/bowser");
+  } else {
+    if (bowser.safari === true) {
+      window.bodyclasses = "safari";
+    } else if (bowser.msie === true) {
+      window.bodyclasses = "msie";
+    } else if (bowser.firefox === true) {
+      window.bodyclasses = "firefox";
+    } else if (bowser.chrome === true) {
+      window.bodyclasses = "chrome";
+    } else if (bowser.opera === true) {
+      window.bodyclasses = "opera";
+    } else if (bowser.iphone) {
+      window.bodyclasses = "iphone";
+    } else if (bowser.android) {
+      window.bodyclasses = "android";
+    } else if (bowser.ipad) {
+      window.bodyclasses = "ipad";
+    }
+
+    if (bowser.mobile && !bowser.ipad) {
+      window.bodyclasses = window.bodyclasses + " mobile";
+    }
+    window.bodyclasses += " " + window.bodyclasses + bowser.version.split(".")[0];
+    $("body").addClass(window.bodyclasses);
   }
-  bodyClass += " " + bodyClass + bowser.version.split(".")[0];
-  $("body").addClass(bodyClass);
 });
