@@ -35,7 +35,7 @@ here is the result (Safari 7):
 <body class="safari safari7">
 ```
 
-you well be able to use those classes in your css files or to run browser specific scripts after document ready
+you well be able to use those classes in your css files or to run browser specific scripts after document ready.
 
 
 ## Creators
