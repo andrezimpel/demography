@@ -38,16 +38,16 @@ here is the result (Safari 7):
 you well be able to use those classes in your css files or to run browser specific scripts after document ready.
 
 
-## Creators
+## creators
 
-**Andre Zimpel**
+**andre zimpel**
 
 - <https://twitter.com/andrezimpel>
 - <https://github.com/andrezimpel>
 
-Hit me up if you want to join!
+hit me up if you want to join!
 
 
-## Copyright and license
+## copyright and license
 
-Code and documentation copyright 2011-2014 Andre Zimpel. Code released under [the MIT license](LICENSE). Docs released under [Creative Commons](docs/LICENSE).
+code and documentation copyright 2011-2014 andre zimpel. code released under [the MIT license](LICENSE).
