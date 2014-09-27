@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
-    watch = require('gulp-watch'),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     path = require('path');
 
@@ -14,12 +14,15 @@ var paths = {
 };
 
 gulp.task('scripts', function() {
-  gulp.src([
-            './bower_components/bowser/bowser.js',
-            './src/js/handle.js'
-            ])
-    // .pipe(uglify())
+  return gulp.src([
+    './src/js/handle.js'
+    ])
     .pipe(concat('demography.js'))
+    // This will output the non-minified version
+    .pipe(gulp.dest('./dist/js'))
+    // This will minify and rename to foo.min.js
+    .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./dist/js'));
 });
 

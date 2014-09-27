@@ -14,7 +14,8 @@
     "path": "latest",
     "gulp": "latest",
     "gulp-uglify": "latest",
-    "gulp-concat": "latest"
+    "gulp-concat": "latest",
+    "gulp-rename": "latest"
   },
   "engineStrict": true,
   "engines": {
