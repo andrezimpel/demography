@@ -25,11 +25,22 @@ $(document).ready(function(){
       } else if (bowser.ipad) {
         window.bodyclasses = "ipad";
       }
+      window.bodyclasses += " " + window.bodyclasses + bowser.version.split(".")[0];
 
-      if (bowser.mobile && !bowser.ipad) {
+      // mobile
+      if(bowser.mobile != undefined && bowser.mobile === true) {
         window.bodyclasses = window.bodyclasses + " mobile";
       }
-      window.bodyclasses += " " + window.bodyclasses + bowser.version.split(".")[0];
+
+      // tablet
+      if(bowser.tablet != undefined && bowser.tablet === true) {
+        window.bodyclasses = window.bodyclasses + " tablet";
+      }
+
+      // desktop
+      if(bowser.tablet == undefined && bowser.mobile == undefined) {
+        window.bodyclasses = window.bodyclasses + " desktop";
+      }
     }
 
     $("body").addClass(window.bodyclasses);
